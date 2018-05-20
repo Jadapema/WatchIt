@@ -1,0 +1,136 @@
+
+####################
+###### Queries #####
+####################
+
+
+
+query FetchMoviesBy_GeLi($genre: String!,$limit: Int!) {
+
+Movies(filter:{limit:$limit},by:{genres: $genre}) {
+title
+year
+mpa_rating
+rating
+runtime
+synopsis
+genres
+imdb_code
+trailer_code
+small_cover_image
+medium_cover_image
+large_cover_image
+background_image_original
+}
+
+}
+
+query FetchMoviesBy_GeLiOf($genre: String!,$limit: Int!,$offset: Int!) {
+
+Movies(filter:{limit:$limit, offset: $offset},by:{genres: $genre}) {
+title
+year
+mpa_rating
+rating
+runtime
+synopsis
+genres
+imdb_code
+trailer_code
+small_cover_image
+medium_cover_image
+large_cover_image
+background_image_original
+}
+
+}
+
+query FetchMoviesBy_GeLiOfSb($genre: String!,$limit: Int!,$offset: Int!,$sort_By: String!) {
+
+Movies(filter:{limit:$limit, offset: $offset, sort_by: $sort_By},by:{genres: $genre}) {
+title
+year
+mpa_rating
+rating
+runtime
+synopsis
+genres
+imdb_code
+trailer_code
+small_cover_image
+medium_cover_image
+large_cover_image
+background_image_original
+}
+
+}
+
+query FetchMoviesBy_GeLiOfSbOr($genre: String!,$limit: Int!,$offset: Int!,$sort_By: String!,$order: String!) {
+
+Movies(filter:{limit:$limit, offset: $offset, sort_by: $sort_By,order:$order},by:{genres: $genre}) {
+title
+year
+mpa_rating
+rating
+runtime
+synopsis
+genres
+imdb_code
+trailer_code
+small_cover_image
+medium_cover_image
+large_cover_image
+background_image_original
+}
+
+}
+
+
+query SearchMovies($target: String!,$resultSize: Int!) {
+MoviesSearch(query:$target,resultSize:$resultSize) {
+title
+year
+mpa_rating
+rating
+runtime
+synopsis
+genres
+imdb_code
+trailer_code
+small_cover_image
+medium_cover_image
+large_cover_image
+background_image_original
+}
+}
+
+query GetMovie($imdbCode: String!) {
+Movie(imdbCode: $imdbCode) {
+title
+title_long
+title_english
+imdb_code
+language
+synopsis
+summary
+description_full
+year
+slug
+trailer_code
+runtime
+rating
+mpa_rating
+resource_name
+resource_id
+date_uploaded
+date_uploaded_unix
+small_cover_image
+medium_cover_image
+large_cover_image
+background_image
+background_image_original
+genres
+subtitles
+}
+}
+
